@@ -5,22 +5,36 @@ import './index.css';
 //stateless functional component
 //always return JSX
 //css
-
+//set up variable
+const firstBook = {
+  img: 'https://images-eu.ssl-images-amazon.com/images/I/51K8xEvReAS._AC_SX184_.jpg',
+  title: 'The Three Khans: And the Emergence of New IndiaThe Three Khans: And the Emergence of New IndiaThe Three Khans: And the Emergence of New…',
+  author: 'Kaveree Bamzai'
+}
+const secondBook = {
+  img: 'https://images-na.ssl-images-amazon.com/images/I/51NHKZC1a0L._SX324_BO1,204,203,200_.jpg',
+  title:'Grandmas Bag of Stories',
+  author: 'sudha murthy'
+}
 function BookList(){
   return <section className="booklist">
-    <Book/>
-    <Book/>
-    <Book/>
-    <Book/>
-    <Book/>
-    <Book/>
+    <Book 
+    img={firstBook.img} 
+    title={firstBook.title} 
+    author={firstBook.author}/>
+    <Book 
+    img={secondBook.img} 
+    title={secondBook.title} 
+    author={secondBook.author}/>
   </section>;
 }
-const Book = () => {
+//use of props
+const Book = ({ img, title, author}) => {
+  // const {img, title, author} = props
   return <article className='book'>
-    <img src="https://images-eu.ssl-images-amazon.com/images/I/51K8xEvReAS._AC_SX184_.jpg" alt=""/>
-    <h1>The Three Khans: And the Emergence of New IndiaThe Three Khans: And the Emergence of New IndiaThe Three Khans: And the Emergence of New…</h1>
-    <h3 style={{color: '#617d98',fontSize: '0.75rem', marginTop: '0.25rem'}}>Kaveree Bamzai</h3>
+    <img src={img} alt=""/>
+    <h1>{title}</h1>
+    <h3>{author}</h3>
   </article>
 }
 
