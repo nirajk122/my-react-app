@@ -23,6 +23,7 @@ body {
 @media screen and (min-width:768px){
   .booklist{
     grid-template-columns: repeat(3, 1fr);
+    align-items: start;
   }
 }
 .book{
@@ -37,4 +38,7 @@ body {
 .book h3 {
   color: red;
   letter-spacing: 5px;
+}
+.book p{
+  margin-top: 0.5rem;
 }
